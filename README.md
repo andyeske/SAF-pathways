@@ -36,12 +36,16 @@ In the [MATLAB Code](https://github.com/andyeske/SAF-pathways/tree/main/MATLAB%2
 
 ```BioPathways_script```: This script is the interface that the user would interact with. In essence, this script calls on the ```BioPathways_func``` function described above, and produces the plots that can be found below. 
 
-In order to run this script, the user must ensure that the following three datasets are imported:
+In order to run this script, the user must download the following three datasets:
 * 'Corn Specs.xlsx' (the version utilized in this work can be found on the [Data Tables](https://github.com/andyeske/SAF-pathways/tree/main/Data%20Tables) folder.
 * 'Corn Data.xlsx' (the version utilized in this work can be found on the [Data Tables](https://github.com/andyeske/SAF-pathways/tree/main/Data%20Tables) folder.
 * 'US Route Data 2019.xlsx' (the version utilized in this work can be found on this [online](https://mitprod-my.sharepoint.com/:f:/g/personal/andyeske_mit_edu/Ej3ZzrVDU-xLihXpZpC1rP4BTqM6xX6tsC07AbuM-7LDtw?e=sZmQcp) folder.
 
-All of the data contained in these 
+All the data contained in these datasets is publicly available online, and has been summarized in these tables for use in this work. Citations have been included within each dataset in case these are needed for further research purposes. 
+
+In addition to the datasets, the user must ensure that the MATLAB script (which can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/MATLAB%20Code), function, as well as ```borderdata.mat``` and ```bordersm.m``` functions have all been downloaded, and saved in the same folder as the three datasets. Then, the user can _Run_ the script (although it can conduct some modifications, as will be shown below, to obtain different results according to its needs).
+
+```BioPathways_script_V2```: This script is identical to the one above, only that the results are specific to California and Texas. 
 
 ([ back to top ](#back_to_top))
 
