@@ -54,7 +54,7 @@ In addition to the datasets, the user must ensure that the MATLAB script (which 
 <a name="results"></a>
 ### 2: Results: Biological Pathways
 
-The following section presents the results from running the ```BioPathways_script``` and ```BioPathways_script_V2``` scripts, as well as specifies areas of the script where the user can modify the code to obtain custom results. The five sub-sections below display the [ inter-state ](#interstate) plots, the [ intra-state ](#intrastate) plots, the [ airline-specific ](#airline) inter-state plots, the [ combined bar ](#bars) plots, as well as the [ Texas & California ](#texascali) plots.
+The following section presents the results from running the ```BioPathways_script``` and ```BioPathways_script_V2``` scripts, as well as specifies areas of the script where the user can modify the code to obtain custom results. The five sub-sections below display the [ inter-state ](#interstate) plots, the [ intra-state ](#intrastate)  plots, the [ airline-specific ](#airline) inter-state plots, the [ combined bar ](#bars) plots, as well as the [ Texas & California ](#texascali)  plots.
 
 ([ back to top ](#back_to_top))
 
