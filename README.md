@@ -33,16 +33,15 @@ The case studies described below take place in the United States, and examine th
 In the [MATLAB Code](https://github.com/andyeske/SAF-pathways/tree/main/MATLAB%20Code) folder of this repository, three functions pertaining to the 'Biological Pathways' study can be found. These are ```BioPathways_func```, ```BioPathways_script```, and ```BioPathways_script_V2```. A description of each can be seen below:
 
 ```BioPathways_func```: For the specific choice of U.S. state, feedstock and conversion pathway, this function takes as inputs information pertaining to crop yields, farming energy and water requirements, intermediate process yields, process energy and water requirements, SAF pathway yield, as well as the SAF pathway energy requirements. Additionally, the function takes data pertaining the state's fuel requirements, installed solar capacity, and existing water consumption.
-<br />
+
 ```BioPathways_script```: This script is the interface that the user would interact with. In essence, this script calls on the ```BioPathways_func``` function described above, and produces the plots that can be found below. 
-<br />
-<br />
+
 In order to run this script, the user must ensure that the following three datasets are imported:
 * 'Corn Specs.xlsx' (the version utilized in this work can be found on the [Data Tables](https://github.com/andyeske/SAF-pathways/tree/main/Data%20Tables) folder.
 * 'Corn Data.xlsx' (the version utilized in this work can be found on the [Data Tables](https://github.com/andyeske/SAF-pathways/tree/main/Data%20Tables) folder.
 * 'US Route Data 2019.xlsx' (the version utilized in this work can be found on this [online](https://mitprod-my.sharepoint.com/:f:/g/personal/andyeske_mit_edu/Ej3ZzrVDU-xLihXpZpC1rP4BTqM6xX6tsC07AbuM-7LDtw?e=sZmQcp) folder.
 
-All of the data contained in these
+All of the data contained in these 
 
 ([ back to top ](#back_to_top))
 
