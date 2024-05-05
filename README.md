@@ -20,9 +20,9 @@ In this repository, we provide an overview of the MATLAB script and function uti
 **Direct Air Capture (to be added):** <br />
 3. [ Code Overview & Inputs ](#overview2) <br />
 4. [ Results: Direct Air Capture ](#results2) <br />
-4a. [ Inter-state Plots ](#inter-state2) <br />
-4b. [ Intra-state Plots ](#intra-state2) <br />
-4c. [ Texas and California Plots ](#texascali2)
+  4a. [ Inter-state Plots ](#inter-state2) <br />
+  4b. [ Intra-state Plots ](#intra-state2) <br />
+  4c. [ Texas and California Plots ](#texascali2)
 
 ---
 <a name="overview"></a>
