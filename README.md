@@ -15,7 +15,7 @@ In this repository, we provide an overview of the MATLAB script and function uti
 2a. [ Inter-state Plots ](#inter-state) <br />
 2b. [ Intra-state Plots ](#intra-state) <br />
 2c. [ Airline-specific Inter-state Plots ](#airline) <br />
-2d. [ Texas and California Plots ](#texascali) 
+2d. [ Texas and California Plots ](#texascali)
 
 **Direct Air Capture (to be added):** <br />
 3. [ Code Overview & Inputs ](#overview2) <br />
