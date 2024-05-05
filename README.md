@@ -37,7 +37,7 @@ In this repository, we provide an overview of the MATLAB script and function uti
 
 ---
 <a name="inter-state"></a>
-### 2a: Inter-state Plots
+#### 2a: Inter-state Plots
 
 ([ back to top ](#back_to_top))
 
