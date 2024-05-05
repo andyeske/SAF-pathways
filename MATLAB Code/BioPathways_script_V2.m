@@ -504,6 +504,9 @@ b1 = bar(cat,B1,'FaceColor','flat');
 b1(1).CData = [0.466 0.674 0.188];
 b1(2).CData = [0.466 0.674 0.188];
 b1(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Harvested Area Requirements / California Field Crop Land')
 ylabel('Harvested Area (%)')
@@ -536,6 +539,9 @@ b3 = bar(cat,B3,'FaceColor','flat');
 b3(1).CData = [0.929 0.694 0.125];
 b3(2).CData = [0.929 0.694 0.125];
 b3(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Solar Requirements / California Installed Capacity')
 ylabel('Solar Capacity (%)')
@@ -553,6 +559,9 @@ b4 = bar(cat,B4,'FaceColor','flat');
 b4(1).CData = [0.85 0.325 0.098];
 b4(2).CData = [0.85 0.325 0.098];
 b4(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Water Requirements / California Water Usage')
 ylabel('Water Use (%)')
@@ -576,6 +585,9 @@ b1 = bar(cat,B1,'FaceColor','flat');
 b1(1).CData = [0.466 0.674 0.188];
 b1(2).CData = [0.466 0.674 0.188];
 b1(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Harvested Area Requirements / Texas Field Crop Land')
 ylabel('Harvested Area (%)')
@@ -608,6 +620,9 @@ b3 = bar(cat,B3,'FaceColor','flat');
 b3(1).CData = [0.929 0.694 0.125];
 b3(2).CData = [0.929 0.694 0.125];
 b3(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Solar Requirements / Texas Installed Capacity')
 ylabel('Solar Capacity (%)')
@@ -622,9 +637,13 @@ tot_water = water(43);
 B4 = 100*B4./tot_water;
 cat = categorical(pathways);
 b4 = bar(cat,B4,'FaceColor','flat');
+xlim=get(gca,'xlim');
 b4(1).CData = [0.85 0.325 0.098];
 b4(2).CData = [0.85 0.325 0.098];
 b4(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Water Requirements / Texas Water Usage')
 ylabel('Water Use (%)')

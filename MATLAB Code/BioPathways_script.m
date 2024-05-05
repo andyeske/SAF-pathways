@@ -669,6 +669,9 @@ b1 = bar(cat,B1,'FaceColor','flat');
 b1(1).CData = [0.466 0.674 0.188];
 b1(2).CData = [0.466 0.674 0.188];
 b1(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Harvested Area Requirements / Total U.S. Field Crop Land')
 ylabel('Harvested Area (%)')
@@ -701,6 +704,9 @@ b3 = bar(cat,B3,'FaceColor','flat');
 b3(1).CData = [0.929 0.694 0.125];
 b3(2).CData = [0.929 0.694 0.125];
 b3(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Solar Requirements / Total U.S. Installed Capacity')
 ylabel('Solar Capacity (%)')
@@ -718,6 +724,9 @@ b4 = bar(cat,B4,'FaceColor','flat');
 b4(1).CData = [0.85 0.325 0.098];
 b4(2).CData = [0.85 0.325 0.098];
 b4(2).FaceAlpha = 0.5;
+hold on
+yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
+yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Water Requirements / Total U.S. Water Usage')
 ylabel('Water Use (%)')
