@@ -12,10 +12,10 @@ In this repository, we provide an overview of the MATLAB script and function uti
 **Biological Pathways:**
 1. [ Code Overview & Inputs ](#overview)
 2. [ Results: Biological Pathways ](#results)
-3. [ Inter-state Plots ](#inter-state)
-4. [ Intra-state Plots ](#intra-state)
-5. [ Airline-specific Inter-state Plots ](#airline)
-6. [ Texas and California Plots ](#texascali)
+2a. [ Inter-state Plots ](#inter-state) <br />
+4. [ Intra-state Plots ](#intra-state) <br />
+5. [ Airline-specific Inter-state Plots ](#airline) <br />
+6. [ Texas and California Plots ](#texascali) <br />
 
 **Direct Air Capture (to be added):**
 7. [ Code Overview & Inputs ](#overview2)
