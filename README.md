@@ -65,7 +65,7 @@ The following section presents the results from running the ```BioPathways_scrip
 The first plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements. Here, the fuel requirements are for all flights departing the state in question, both within the state and to other states. An example plot can be seen below:
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Energy%20-%20Inter-state.png" width="500"> 
 
 **Figure:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
@@ -132,7 +132,13 @@ To obtain inter-state map plots corresponding to other feedstock-SAF pathway com
 <a name="bars"></a>
 #### 2d: Combined Bar Plots
 
-The fourth plot that running the ```BioPathways_script``` returns is the following bar plot, comparing the cumulative (for the entire United States) land, feedstock, energy and water for each of the nine feedstock-SAF pathways combinations.
+The fourth plot that running the ```BioPathways_script``` returns is the following bar plot, comparing the cumulative (for the entire United States) land, feedstock, energy and water for each of the nine feedstock-SAF pathways combinations. The obtained summary plot can be seen below:
+
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bars%20-%20US.png" width="500"> 
+
+**Figure:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways.
+</p>
 
 ([ back to top ](#back_to_top))
 
@@ -140,7 +146,35 @@ The fourth plot that running the ```BioPathways_script``` returns is the followi
 <a name="texascali"></a>
 #### 2e: Texas and California Plots
 
-Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPathways_script```, only that these are specific to California and Texas, the two case studies of this work.
+Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPathways_script```, only that these are specific to California and Texas, the two case studies of this work. Below, some sample plots are presented: 
+
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/TexasCali%20Energy%20-%20Inter-state.png" width="500"> 
+
+**Figure:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+</p>
+
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/TexasCali%20Energy%20-%20Intra-state.png" width="500"> 
+
+**Figure:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+</p>
+
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bars%20-%20Texas.png" width="500"> 
+
+**Figure:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+</p>
+
+To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
+
+  ```
+  airlines = {'Spirit','Republic','Delta','United','Jetblue'...
+            'Endeavor','Southwest','Sun Country','Alaska','Hawaiian',...
+            'SkyWest','Piedmont','Envoy','PSA','Horizon',...
+            'American','Allegiant','Frontier','Mesa'};
+  air = 16; % American
+  ```
 
 ([ back to top ](#back_to_top))
 
