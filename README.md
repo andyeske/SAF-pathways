@@ -11,7 +11,7 @@ In this repository, we provide an overview of the MATLAB script and function uti
 
 **Biological Pathways:**
 1. [ Code Overview & Inputs ](#overview)
-2. [ Results: Biological Pathways ](#results)
+2. [ Results: Biological Pathways ](#results) <br />
 2a. [ Inter-state Plots ](#inter-state) <br />
 4. [ Intra-state Plots ](#intra-state) <br />
 5. [ Airline-specific Inter-state Plots ](#airline) <br />
