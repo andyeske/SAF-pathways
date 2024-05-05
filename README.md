@@ -116,7 +116,7 @@ The third plot that running the ```BioPathways_script``` returns is the followin
 **Figure:** _Airline-Specific Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
-To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
+To obtain inter-state map plots corresponding to other airlines, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
 
   ```
   airlines = {'Spirit','Republic','Delta','United','Jetblue'...
@@ -166,15 +166,16 @@ Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPa
 **Figure:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
-To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
+To obtain California/Texas inter/intra-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 234-237) within the ```BioPathways_script_V2``` script:
 
   ```
-  airlines = {'Spirit','Republic','Delta','United','Jetblue'...
-            'Endeavor','Southwest','Sun Country','Alaska','Hawaiian',...
-            'SkyWest','Piedmont','Envoy','PSA','Horizon',...
-            'American','Allegiant','Frontier','Mesa'};
-  air = 16; % American
+  pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
+      'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
+      'Switchgrass FT';'Corn Oil HEFA'};
+  path = 1;
   ```
+
+**Note:** It is possible to modify the variable ```selection``` (line 18) to admit indeces corresponding to other states. By default, the indeces 5 and 43 correspond to California and Texas, respectively. 
 
 ([ back to top ](#back_to_top))
 
