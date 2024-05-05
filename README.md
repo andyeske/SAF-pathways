@@ -1,3 +1,4 @@
+<a name="back_to_top"></a>
 # Pathways Towards Future Aviation Energy Carriers, CO<sub>2</sub> Capture and Reduction, Energy Carrier Production and Scale-Up
 
 In this repository, we provide an overview of the MATLAB script and function utilized to:
@@ -11,17 +12,17 @@ In this repository, we provide an overview of the MATLAB script and function uti
 **Biological Pathways:**
 1. [ Code Overview & Inputs ](#overview)
 2. [ Results: Biological Pathways ](#results)
-* [ Inter-state Plots ](#inter-state)
-* [ Intra-state Plots ](#intra-state)
-* [ Airline-specific Inter-state Plots ](#airline)
-* [ Texas and California Plots ](#texascali)
+3. [ Inter-state Plots ](#inter-state)
+4. [ Intra-state Plots ](#intra-state)
+5. [ Airline-specific Inter-state Plots ](#airline)
+6. [ Texas and California Plots ](#texascali)
 
 **Direct Air Capture (to be added):**
-3. [ Code Overview & Inputs ](#overview2)
-4. [ Results: Direct Air Capture ](#results2)
-  4a. [ Inter-state Plots ](#inter-state2)
-  4b. [ Intra-state Plots ](#intra-state2)
-  4d. [ Texas and California Plots ](#texascali2)
+7. [ Code Overview & Inputs ](#overview2)
+8. [ Results: Direct Air Capture ](#results2)
+9. [ Inter-state Plots ](#inter-state2)
+10. [ Intra-state Plots ](#intra-state2)
+11. [ Texas and California Plots ](#texascali2)
 
 ---
 <a name="overview"></a>
