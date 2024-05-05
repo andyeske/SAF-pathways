@@ -17,7 +17,8 @@ The case studies described below take place in the United States, and examine th
 &nbsp; &nbsp; 2a: [ Inter-state Plots ](#inter-state) <br />
 &nbsp; &nbsp; 2b: [ Intra-state Plots ](#intra-state) <br />
 &nbsp; &nbsp; 2c: [ Airline-specific Inter-state Plots ](#airline) <br />
-&nbsp; &nbsp; 2d: [ Texas and California Plots ](#texascali)
+&nbsp; &nbsp; 2d: [ Combined Bar Plots ](#bars) <br />
+&nbsp; &nbsp; 2e: [ Texas and California Plots ](#texascali)
 
 **Direct Air Capture (to be added):** <br />
 3: [ Code Overview & Inputs ](#overview2) <br />
@@ -53,11 +54,15 @@ In addition to the datasets, the user must ensure that the MATLAB script (which 
 <a name="results"></a>
 ### 2: Results: Biological Pathways
 
+The following section presents the results from running the ```BioPathways_script``` and ```BioPathways_script_V2``` scripts, as well as specifies areas of the script where the user can modify the code to obtain custom results. The five sub-sections below display the [ inter-state ](#interstate) plots, the [ intra-state ](#intrastate) plots, the [ airline-specific ](#airline) inter-state plots, the [ combined bar ](#bars) plots, as well as the [ Texas & California ](#texascali) plots.
+
 ([ back to top ](#back_to_top))
 
 ---
 <a name="inter-state"></a>
 #### 2a: Inter-state Plots
+
+The first plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements. Here, the fuel requirements are for all flights departing the state in question, both within the state and to other states.
 
 ([ back to top ](#back_to_top))
 
@@ -65,17 +70,31 @@ In addition to the datasets, the user must ensure that the MATLAB script (which 
 <a name="intra-state"></a>
 #### 2b: Intra-state Plots
 
+The second plot that running the ```BioPathways_script``` returns is the following intra-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (intra-state) fuel requirements. Here, the fuel requirements are for all flights within the state in question.
+
 ([ back to top ](#back_to_top))
 
 ---
 <a name="airline"></a>
 #### 2c: Airline-specific Inter-state Plots
 
+The third plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements, but specific to an airline. 
+
+([ back to top ](#back_to_top))
+
+---
+<a name="bars"></a>
+#### 2d: Combined Bar Plots
+
+The fourth plot that running the ```BioPathways_script``` returns is the following bar plot, comparing the cumulative (for the entire United States) land, feedstock, energy and water for each of the nine feedstock-SAF pathways combinations.
+
 ([ back to top ](#back_to_top))
 
 ---
 <a name="texascali"></a>
-#### 2d: Texas and California Plots
+#### 2e: Texas and California Plots
+
+Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPathways_script```, only that these are specific to California and Texas, the two case studies of this work.
 
 ([ back to top ](#back_to_top))
 
