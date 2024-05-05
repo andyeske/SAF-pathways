@@ -62,7 +62,22 @@ The following section presents the results from running the ```BioPathways_scrip
 <a name="inter-state"></a>
 #### 2a: Inter-state Plots
 
-The first plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements. Here, the fuel requirements are for all flights departing the state in question, both within the state and to other states.
+The first plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements. Here, the fuel requirements are for all flights departing the state in question, both within the state and to other states. An example plot can be seen below:
+
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots" width="500"> 
+
+**Figure:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+</p>
+
+To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
+
+  ```
+  pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
+      'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
+      'Switchgrass FT';'Corn Oil HEFA'};
+  path = 1;
+  ```
 
 ([ back to top ](#back_to_top))
 
@@ -70,7 +85,22 @@ The first plot that running the ```BioPathways_script``` returns is the followin
 <a name="intra-state"></a>
 #### 2b: Intra-state Plots
 
-The second plot that running the ```BioPathways_script``` returns is the following intra-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (intra-state) fuel requirements. Here, the fuel requirements are for all flights within the state in question.
+The second plot that running the ```BioPathways_script``` returns is the following intra-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (intra-state) fuel requirements. Here, the fuel requirements are for all flights within the state in question. An example plot can be seen below:
+
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Energy%20-%20Intra-state.png" width="500"> 
+
+**Figure:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+</p>
+
+To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
+
+  ```
+  pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
+      'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
+      'Switchgrass FT';'Corn Oil HEFA'};
+  path = 1;
+  ```
 
 ([ back to top ](#back_to_top))
 
@@ -78,7 +108,23 @@ The second plot that running the ```BioPathways_script``` returns is the followi
 <a name="airline"></a>
 #### 2c: Airline-specific Inter-state Plots
 
-The third plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements, but specific to an airline. 
+The third plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements, but specific to an airline. An example plot can be seen below:
+
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Energy%20-%20American.png" width="500"> 
+
+**Figure:** _Airline-Specific Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+</p>
+
+To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
+
+  ```
+  airlines = {'Spirit','Republic','Delta','United','Jetblue'...
+            'Endeavor','Southwest','Sun Country','Alaska','Hawaiian',...
+            'SkyWest','Piedmont','Envoy','PSA','Horizon',...
+            'American','Allegiant','Frontier','Mesa'};
+  air = 16; % American
+  ```
 
 ([ back to top ](#back_to_top))
 
