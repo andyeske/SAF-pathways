@@ -5,6 +5,8 @@ In this repository, we provide an overview of the MATLAB script and function uti
 1) Compute the process energy, water, and harvested land energy requirements for each choice of feedstock and pathway.
 2) Adapt the code to obtain various plots, displaying the results on a per-state basis.
 
+The case studies described below take place in the United States, and examine the thought experiment where each state would independently seek to satisfy its SAF requirements by using only local resources (i.e., farming, energy and water sourced from the state itself).
+
 ## MATLAB Code
 
 ### Table of Contents
@@ -27,6 +29,13 @@ In this repository, we provide an overview of the MATLAB script and function uti
 ---
 <a name="overview"></a>
 ### 1: Code Overview & Inputs
+
+In the [MATLAB Code](https://github.com/andyeske/SAF-pathways/tree/main/MATLAB%20Code) folder of this repository, three functions pertaining to the 'Biological Pathways' study can be found. These are ```BioPathways_func```, ```BioPathways_script```, and ```BioPathways_script_V2```. A description of each can be seen below:
+
+```BioPathways_func```: For the specific choice of U.S. state, feedstock and conversion pathway, this function takes as inputs information pertaining to crop yields, farming energy and water requirements, intermediate process yields, process energy and water requirements, SAF pathway yield, as well as the SAF pathway energy requirements. Additionally, the function takes data pertaining the state's fuel requirements, installed solar capacity, and existing water consumption.
+<br />
+<br />
+```BioPathways_script```: This script is the interface that the user would interact with. In essence, this script calls on the ```BioPathways_func``` function described above, and produces the plots that can be found below. In order to 
 
 ([ back to top ](#back_to_top))
 
