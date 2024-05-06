@@ -5,9 +5,7 @@ In this repository, we provide an overview of the MATLAB script and function uti
 1) Compute the process energy, water, and harvested land energy requirements for each choice of feedstock and pathway.
 2) Adapt the code to obtain various plots, displaying the results on a per-state basis.
 
-The case studies described below take place in the United States, and examine the thought experiment where each state would independently seek to satisfy its SAF requirements by using only local resources (i.e., farming, energy and water sourced from the state itself).
-
-Two parallel SAF production pathways are considered in this work: 
+The case studies described below take place in the United States, and examine the thought experiment where each state would independently seek to satisfy its SAF requirements by using only local resources (i.e., farming, energy and water sourced from the state itself). Two parallel SAF production pathways are considered in this work: 
 
 Biological (Bio) Pathways, where the fuel is produced starting from biological carbon sources. Nine combinations of feedstock-pathways are considered, including:
 1. Corn Grain Alcohol-to-Jet (ATJ) via Ethanol (EtOH) upgrading.
