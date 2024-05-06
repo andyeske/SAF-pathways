@@ -22,6 +22,12 @@ Direct Air Capture (DAC) Pathways, where the fuel is producing using CO2 taken f
 1. DAC + Reverse Water Gas Shift (RWGS) + FT.
 2. DAC + electrolysis + FT.
 
+<p align="left">
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Pathways%20Overview.png" width="500"> 
+
+**Figure 1:** _Schematic of the two pathways, Biological and Direct Air Capture, considered in this work_.
+</p>
+
 ## MATLAB Code
 
 ### Table of Contents
@@ -84,7 +90,7 @@ The first plot that running the ```BioPathways_script``` returns is the followin
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20Inter-state.png" width="500"> 
 
-**Figure 1:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 2:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
@@ -107,7 +113,7 @@ The second plot that running the ```BioPathways_script``` returns is the followi
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20Intra-state.png" width="500"> 
 
-**Figure 2:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 3:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
@@ -130,7 +136,7 @@ The third plot that running the ```BioPathways_script``` returns is the followin
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20American.png" width="500"> 
 
-**Figure 3:** _Airline-Specific Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 4:** _Airline-Specific Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain inter-state map plots corresponding to other airlines, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
@@ -154,7 +160,7 @@ The fourth plot that running the ```BioPathways_script``` returns is the followi
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(Biological)%20-%20US.png" width="500"> 
 
-**Figure 4:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways.
+**Figure 5:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways.
 </p>
 
 ([ back to top ](#back_to_top))
@@ -168,19 +174,19 @@ Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPa
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)%20-%20Inter-state.png" width="500"> 
 
-**Figure 5:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 6:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)-%20Intra-state.png" width="500"> 
 
-**Figure 6:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 7:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(Biological)%20-%20Texas.png" width="500"> 
 
-**Figure 7:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 8:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain California/Texas inter/intra-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 234-237) within the ```BioPathways_script_V2``` script:
@@ -231,7 +237,7 @@ The first plot that running the ```BioPathways_script``` returns is the followin
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20Inter-state.png" width="500"> 
 
-**Figure 8:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 9:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
@@ -254,7 +260,7 @@ The second plot that running the ```BioPathways_script``` returns is the followi
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20Intra-state.png" width="500"> 
 
-**Figure 9:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 10:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
@@ -277,7 +283,7 @@ The third plot that running the ```BioPathways_script``` returns is the followin
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20American.png" width="500"> 
 
-**Figure 10:** _Airline-Specific Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 11:** _Airline-Specific Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain inter-state map plots corresponding to other airlines, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
@@ -301,7 +307,7 @@ The fourth plot that running the ```BioPathways_script``` returns is the followi
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(Biological)%20-%20US.png" width="500"> 
 
-**Figure 11:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways.
+**Figure 12:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways.
 </p>
 
 ([ back to top ](#back_to_top))
@@ -315,19 +321,19 @@ Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPa
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)%20-%20Inter-state.png" width="500"> 
 
-**Figure 12:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 13:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)-%20Intra-state.png" width="500"> 
 
-**Figure 13:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 14:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 <p align="left">
 <img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(Biological)%20-%20Texas.png" width="500"> 
 
-**Figure 14:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 15:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 To obtain California/Texas inter/intra-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 234-237) within the ```BioPathways_script_V2``` script:
