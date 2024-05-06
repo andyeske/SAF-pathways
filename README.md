@@ -8,20 +8,21 @@ In this repository, we provide an overview of the MATLAB script and function uti
 The case studies described below take place in the United States, and examine the thought experiment where each state would independently seek to satisfy its SAF requirements by using only local resources (i.e., farming, energy and water sourced from the state itself).
 
 Two parallel SAF production pathways are considered in this work: 
-1) Biological (Bio) Pathways, where the fuel is produced starting from biological carbon sources. Nine combinations of feedstock-pathways are considered, including:
-   *www
-   * Corn Grain Alcohol-to-Jet (ATJ) via Ethanol (EtOH) upgrading.
-   * Corn Grain ATJ via Butanol (BuOH) upgrading.
-   * Corn Stover ATJ via EtOH upgrading.
-   * Miscanthus ATJ via EtOH upgrading.
-   * Switchgrass ATJ via EtOH upgrading.
-   * Corn Stover Fischer-Tropsch (FT) synthesis.
-   * Miscanthus FT synthesis.
-   * Switchgrass FT synthesis.
-   * Corn Oil Hydrotreated Esters and Fatty Acids (HEFA) production.
-3) Direct Air Capture (DAC) Pathways, where the fuel is producing using CO2 taken from the atmosphere as carbon sources. Two different integrated DAC systems are considered, including:
-  * DAC + Reverse Water Gas Shift (RWGS) + FT.
-  * DAC + electrolysis + FT.
+
+Biological (Bio) Pathways, where the fuel is produced starting from biological carbon sources. Nine combinations of feedstock-pathways are considered, including:
+* Corn Grain Alcohol-to-Jet (ATJ) via Ethanol (EtOH) upgrading.
+* Corn Grain ATJ via Butanol (BuOH) upgrading.
+* Corn Stover ATJ via EtOH upgrading.
+* Miscanthus ATJ via EtOH upgrading.
+* Switchgrass ATJ via EtOH upgrading.
+* Corn Stover Fischer-Tropsch (FT) synthesis.
+* Miscanthus FT synthesis.
+* Switchgrass FT synthesis.
+* Corn Oil Hydrotreated Esters and Fatty Acids (HEFA) production.
+
+Direct Air Capture (DAC) Pathways, where the fuel is producing using CO2 taken from the atmosphere as carbon sources. Two different integrated DAC systems are considered, including:
+* DAC + Reverse Water Gas Shift (RWGS) + FT.
+* DAC + electrolysis + FT.
 
 ## MATLAB Code
 
