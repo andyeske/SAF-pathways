@@ -1,7 +1,7 @@
 % Biological Pathways - Script (Texas and California only)
 % The following script computes the energy, land and water requirements for
 % the production of SAF, given a choice of feedstock and conversion
-% pathway, considering 3 policy scenarios.
+% pathway, considering 2 policy scenarios.
 
 % ----------------------------------------------------------------------- %
 % Step 1: Importing the relevant datasets
@@ -87,12 +87,12 @@ land_Harvested = zeros(50,1);
 land_Harvested(:,1) = HarvestedLand_Data{3:52,10};
 states = HarvestedLand_Data{3:52,8};
 
-% i) Solar Irradiance Data (MJ/ha/year):
-solar = zeros(50,1);
-solar(:,1) = solar_Data{1:50,3};
-solar(:,2) = solar_Data{1:50,6};
+% i) Solar Data:
+solar = zeros(50,2);
+solar(:,1) = solar_Data{1:50,3}; % Irradiance: MJ/ha/year
+solar(:,2) = solar_Data{1:50,6}; % Generation: MJ/year
 
-% j) Water Data (MJ/ha/year):
+% j) Water Data (gal/year):
 water = zeros(50,1);
 water(:,1) = water_Data{1:50,3};
 
@@ -106,11 +106,12 @@ fuel_reqs_Data(:,3:21) = Route_Data{2:51,17:35};
 % SAF outputs from each process
 
 % ----------------------------------------------------------------------- %
-% Step 3: Calling "BioPathways_func" to run three policy scenarios: 
+% Step 3: Calling "BioPathways_func" to run two policy scenarios: 
 % Given the 9 pathways, what are the land, water and energy requirements to
 % satisfy the demand for SAF per state, considering:
 
-% Scenario 1: inter- and intra-state flights
+% Scenario 1: inter-state flights (i.e., all flights departing a given
+% state, within the state and to other states).
 S1 = zeros(2,9,8);
 effs = zeros(9,4);
 
@@ -125,7 +126,7 @@ for q = 1:2 % Iterating through every state
 
         % Calling the "BioPathways_func" function   
         [areas,area_per,feedstock,energy,area_solar,solar_per,water_req,...
-         water_per,energy_eff,energy_eff2,SAF_eff,SAF_eff2] =...
+         water_per,~,~,~,~] =...
          BioPathways_func(crop_Yield(s,:),farming_E,farming_H2O,...
          process_Yield,process_E,process_H2O,SAF_Yield,SAF_E,crop_CO2,...
          land_Harvested(s),fuel_reqs_Data(s,1),solar(s,:),water(s),v_pathways);
@@ -143,19 +144,12 @@ for q = 1:2 % Iterating through every state
         end
         S1(q,path,7) = water_req(water_req>0); % Required Water (gal)
         S1(q,path,8) = water_per(water_per>0); % Required Water / State Water Usage (%)
-
-        % Efficiencies
-        if s == 1 % Calculating only once
-            effs(path,1) = energy_eff(energy_eff>0); % Energy Efficiency (MJ of Energy/gal of SAF)
-            effs(path,2) = energy_eff2(energy_eff2>0); % Energy Efficiency 2 (MJ of Energy/MJ of SAF)
-            effs(path,3) = SAF_eff(SAF_eff>0); % SAF Efficiency (gal SAF/kg of feedstock)
-            effs(path,4) = SAF_eff2(SAF_eff2>0); % SAF Efficiency 2 (MJ of SAF/MJ of feedstock)
-        end
     end
     
 end
 
-% Scenario 2: only intra-state flights
+% Scenario 2: only intra-state flights (i.e., all flights taking place
+% within a state).
 S2 = zeros(2,9,8);
 
 for q = 1:2 % Iterating through every state
@@ -190,51 +184,13 @@ for q = 1:2 % Iterating through every state
     end
 end
 
-% Scenario 3: inter- and intra-state flights, segmented by airline
-S3 = zeros(2,19,9,8);
-
-for q = 1:2 % Iterating through every state
-    s = selection(q);
-    for a = 1:19 % Iterating through every airline
-        for path = 1:9 % Iterating through every pathway
-            if fuel_reqs_Data(s,2+a) ~= 0 % Ommiting those cases where there is no fuel consumption
-                % path = 1: CG_ATJ_EtOH, 2: CG_ATJ_BuOH, 3: CS_ATJ_EtOH, 
-                % 4: Misc_ATJ_EtOH, 5: Switch_ATJ_EtOH, 6: CS_FT, 7: Misc_FT, 
-                % 8: Switch_FT, 9: CO_HEFA]
-                v_pathways = zeros(9,1);
-                v_pathways(path) = 1;
-        
-                % Calling the "BioPathways_func" function       
-                [areas,area_per,feedstock,energy,area_solar,solar_per,water_req,water_per,~,~,~,~] =...
-                 BioPathways_func(crop_Yield(s,:),farming_E,farming_H2O,...
-                 process_Yield,process_E,process_H2O,SAF_Yield,SAF_E,...
-                 crop_CO2,land_Harvested(s),fuel_reqs_Data(s,2+a),solar(s,:),water(s),v_pathways);
-        
-                % Populating the S1 matrix
-                S3(q,a,path,1) = areas(areas>0); % Required Harvest Land Area Requirements (ha)
-                S3(q,a,path,2) = area_per(area_per>0); % Required Harvested Land Area / Total State Field Crop Land Area (%)
-                S3(q,a,path,3) = feedstock(feedstock>0); % Total Feedstock (kg)
-                S3(q,a,path,4) = energy(energy>0); % Required Energy (MJ)
-                S3(q,a,path,5) = area_solar(area_solar>0); % Required Solar Energy Area (assuming 10% efficiency) (ha)
-                if solar_per == 0
-                    S3(q,a,path,6) = 0;
-                else
-                    S3(q,a,path,6) = solar_per(solar_per>0); % Solar Required / State Installed Capacity (%)
-                end
-                S3(q,a,path,7) = water_req(water_req>0); % Required Water (gal)
-                S3(q,a,path,8) = water_per(water_per>0); % Required Water / State Water Usage (%)
-            end
-        end
-     end
-end
-
 % ----------------------------------------------------------------------- %
 % Step 3: Plotting the results, 
 % For plotting, the user has to choose the desired conversion pathway.
 pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
     'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
     'Switchgrass FT';'Corn Oil HEFA'};
-path = 1;
+path = 6;
 states{10,1} = 'Georgia.';
 
 centers = [35.9,-119.2; % CA (5)

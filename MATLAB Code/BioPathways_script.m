@@ -84,12 +84,12 @@ land_Harvested = zeros(50,1);
 land_Harvested(:,1) = HarvestedLand_Data{3:52,10};
 states = HarvestedLand_Data{3:52,8};
 
-% i) Solar Irradiance Data (MJ/ha/year):
-solar = zeros(50,1);
-solar(:,1) = solar_Data{1:50,3};
-solar(:,2) = solar_Data{1:50,6};
+% i) Solar Data:
+    solar = zeros(50,2);
+solar(:,1) = solar_Data{1:50,3}; % Irradiance: MJ/ha/year
+solar(:,2) = solar_Data{1:50,6}; % Generation: MJ/year
 
-% j) Water Data (MJ/ha/year):
+% j) Water Data (gal/year):
 water = zeros(50,1);
 water(:,1) = water_Data{1:50,3};
 
@@ -107,7 +107,8 @@ fuel_reqs_Data(:,3:21) = Route_Data{2:51,17:35};
 % Given the 9 pathways, what are the land, water and energy requirements to
 % satisfy the demand for SAF per state, considering:
 
-% Scenario 1: inter- and intra-state flights
+% Scenario 1: inter-state flights (i.e., all flights departing a given
+% state, within the state and to other states).
 S1 = zeros(50,9,8);
 effs = zeros(9,4);
 
@@ -121,7 +122,7 @@ for s = 1:50 % Iterating through every state
 
         % Calling the "BioPathways_func" function   
         [areas,area_per,feedstock,energy,area_solar,solar_per,water_req,...
-         water_per,energy_eff,energy_eff2,SAF_eff,SAF_eff2] =...
+         water_per,~,~,~,~] =...
          BioPathways_func(crop_Yield(s,:),farming_E,farming_H2O,...
          process_Yield,process_E,process_H2O,SAF_Yield,SAF_E,crop_CO2,...
          land_Harvested(s),fuel_reqs_Data(s,1),solar(s,:),water(s),v_pathways);
@@ -139,19 +140,12 @@ for s = 1:50 % Iterating through every state
         end
         S1(s,path,7) = water_req(water_req>0); % Required Water (gal)
         S1(s,path,8) = water_per(water_per>0); % Required Water / State Water Usage (%)
-
-        % Efficiencies
-        if s == 1 % Calculating only once
-            effs(path,1) = energy_eff(energy_eff>0); % Energy Efficiency (MJ of Energy/gal of SAF)
-            effs(path,2) = energy_eff2(energy_eff2>0); % Energy Efficiency 2 (MJ of Energy/MJ of SAF)
-            effs(path,3) = SAF_eff(SAF_eff>0); % SAF Efficiency (gal SAF/kg of feedstock)
-            effs(path,4) = SAF_eff2(SAF_eff2>0); % SAF Efficiency 2 (MJ of SAF/MJ of feedstock)
-        end
     end
     
 end
 
-% Scenario 2: only intra-state flights
+% Scenario 2: only intra-state flights (i.e., all flights taking place
+% within a state).
 S2 = zeros(50,9,8);
 
 for s = 1:50 % Iterating through every state
@@ -185,7 +179,9 @@ for s = 1:50 % Iterating through every state
     end
 end
 
-% Scenario 3: inter- and intra-state flights, segmented by airline
+% Scenario 3: inter-state flights, segmented by airline (i.e., similar 
+% to Scenario 1, but only considering those flights operated by a 
+% specific airline).
 S3 = zeros(50,19,9,8);
 
 for s = 1:50 % Iterating through every state
