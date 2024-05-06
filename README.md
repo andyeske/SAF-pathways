@@ -208,7 +208,7 @@ To obtain California/Texas inter/intra-state map plots corresponding to other fe
 
 Similarly to before, the [MATLAB Code](https://github.com/andyeske/SAF-pathways/tree/main/MATLAB%20Code) folder of this repository contains two functions related to the 'Direct Air Capture (DAC) Pathways' study. These are ```DACPathways_script```, and ```DACPathways_script_V2```. A description of each can be seen below:
 
-```DACPathways_func```: The following script computes DAC land, as well as energy and water input requirements, to meet a state's SAF demand using pre-calculated factors of two systems: a DAC + Reverse Water Gas Shift (RWGS) + Fischer-Tropsch (FT) facility and a DAC + electrolysis + FT facility (see this work's supplementary information section for more detail). 
+```DACPathways_script```: The following script computes DAC land, as well as energy and water input requirements, to meet a state's SAF demand using pre-calculated factors of two systems: a DAC + Reverse Water Gas Shift (RWGS) + Fischer-Tropsch (FT) facility and a DAC + electrolysis + FT facility (see this work's supplementary information section for more detail). 
 
 ```DACPathways_script_V2```: This script is identical to the one above, only that the results are specific to California and Texas. 
 
@@ -224,7 +224,7 @@ In addition to the datasets, the user must ensure that the MATLAB scripts (which
 <a name="results2"></a>
 ### 4: Results: DAC Pathways
 
-The following section presents the results from running the ```BioPathways_script``` and ```BioPathways_script_V2``` scripts, as well as specifies areas of the script where the user can modify the code to obtain custom results. The five sub-sections below display the [inter-state](#interstate) plots, the [intra-state](#intrastate) plots, the [airline-specific](#airline) inter-state plots, the [combined bar](#bars) plots, as well as the [Texas & California](#texascali) plots.
+The following section presents the results from running the ```DACPathways_script``` and ```DACPathways_script_V2``` scripts, as well as specifies areas of the script where the user can modify the code to obtain custom results. The five sub-sections below display the [inter-state](#interstate2) plots, the [intra-state](#intrastate2) plots, the [airline-specific](#airline2) inter-state plots, the [combined bar](#bars2) plots, as well as the [Texas & California](#texascali2) plots.
 
 ([ back to top ](#back_to_top))
 
@@ -232,21 +232,19 @@ The following section presents the results from running the ```BioPathways_scrip
 <a name="inter-state2"></a>
 #### 4a: Inter-state Plots
 
-The first plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements. Here, the fuel requirements are for all flights departing the state in question, both within the state and to other states. An example plot can be seen below:
+The first plot that running the ```DACPathways_script``` returns is the following inter-state map plot, displaying land, energy and water requirements for each state to satisfy their (inter-state) fuel requirements. Here, the fuel requirements are for all flights departing the state in question, both within the state and to other states. An example plot can be seen below:
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20Inter-state.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/DAC%2BRWGS%20Maps/DAC%2BRWGS%20-%20Inter-state.png" width="500"> 
 
-**Figure 9:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 9:** _Inter-state Land, Energy and Water Requirements, for the DAC+RWGS+FT pathway. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
-To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
+To obtain inter-state map plots corresponding to other DAC pathways, the user must modify the index of the variable ```path``` (lines 122-123) within the ```DACPathways_script``` script:
 
   ```
-  pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
-      'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
-      'Switchgrass FT';'Corn Oil HEFA'};
-  path = 1;
+  pathways = {'DAC+RWGS+FT','DAC+electrolysis+FT'};
+  path = 2;
   ```
 
 ([ back to top ](#back_to_top))
@@ -255,21 +253,19 @@ To obtain inter-state map plots corresponding to other feedstock-SAF pathway com
 <a name="intra-state2"></a>
 #### 4b: Intra-state Plots
 
-The second plot that running the ```BioPathways_script``` returns is the following intra-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (intra-state) fuel requirements. Here, the fuel requirements are for all flights within the state in question. An example plot can be seen below:
+The second plot that running the ```DACPathways_script``` returns is the following intra-state map plot, displaying land, energy and water requirements for each state to satisfy their (intra-state) fuel requirements. Here, the fuel requirements are for all flights within the state in question. An example plot can be seen below:
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20Intra-state.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/DAC%2BRWGS%20Maps/DAC%2BRWGS%20-%20Intra-state.png" width="500"> 
 
-**Figure 10:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 10:** _Intra-state Land, Energy and Water Requirements, for the DAC+RWGS+FT pathway. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
-To obtain inter-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 228-231) within the ```BioPathways_script``` script:
+To obtain inter-state map plots corresponding to other pathways, the user must modify the index of the variable ```path``` (lines 122-123) within the ```DACPathways_script``` script:
 
   ```
-  pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
-      'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
-      'Switchgrass FT';'Corn Oil HEFA'};
-  path = 1;
+  pathways = {'DAC+RWGS+FT','DAC+electrolysis+FT'};
+  path = 2;
   ```
 
 ([ back to top ](#back_to_top))
@@ -278,15 +274,15 @@ To obtain inter-state map plots corresponding to other feedstock-SAF pathway com
 <a name="airline2"></a>
 #### 4c: Airline-specific Inter-state Plots
 
-The third plot that running the ```BioPathways_script``` returns is the following inter-state map plot, displaying land, feedstock, energy and water requirements for each state to satisfy their (inter-state) fuel requirements, but specific to an airline. An example plot can be seen below:
+The third plot that running the ```DACPathways_script``` returns is the following inter-state map plot, displaying land, energy and water requirements for each state to satisfy their (inter-state) fuel requirements, but specific to an airline. An example plot can be seen below:
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20-%20American.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/DAC%2BRWGS%20Maps/DAC%2BRWGS%20-%20American.png" width="500"> 
 
-**Figure 11:** _Airline-Specific Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 11:** _Airline-Specific Inter-state Land, Energy and Water Requirements, for the DAC+RWGS+FT pathway and American Airlines. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
-To obtain inter-state map plots corresponding to other airlines, the user must modify the index of the variable ```air``` (lines 531-535) within the ```BioPathways_script``` script:
+To obtain inter-state map plots corresponding to other airlines, the user must modify the index of the variable ```air``` (lines 421-425) within the ```DACPathways_script``` script:
 
   ```
   airlines = {'Spirit','Republic','Delta','United','Jetblue'...
@@ -302,12 +298,12 @@ To obtain inter-state map plots corresponding to other airlines, the user must m
 <a name="bars2"></a>
 #### 4d: Combined Bar Plots
 
-The fourth plot that running the ```BioPathways_script``` returns is the following bar plot, comparing the cumulative (for the entire United States) land, feedstock, energy and water for each of the nine feedstock-SAF pathways combinations. The obtained summary plot can be seen below:
+The fourth plot that running the ```DACPathways_script``` returns is the following bar plot, comparing the cumulative (for the entire United States) land, energy and water for the two DAC pathways. The obtained summary plot can be seen below:
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(Biological)%20-%20US.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(DAC)%20-%20US.png" width="500"> 
 
-**Figure 12:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways.
+**Figure 12:** _Inter-state vs Intra-state Land, Energy and Water Requirements, for the two DAC pathways.
 </p>
 
 ([ back to top ](#back_to_top))
@@ -316,36 +312,34 @@ The fourth plot that running the ```BioPathways_script``` returns is the followi
 <a name="texascali2"></a>
 #### 4e: Texas and California Plots
 
-Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPathways_script```, only that these are specific to California and Texas, the two case studies of this work. Below, some sample plots are presented: 
+Running ```DACPathways_script_V2``` produces plots similar in nature to ```DACPathways_script```, only that these are specific to California and Texas, the two case studies of this work. Below, some sample plots are presented: 
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)%20-%20Inter-state.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/DAC%2BRWGS%20Maps/DAC%2BRWGS%20(TexasCali)%20-%20Inter-state.png" width="500"> 
 
-**Figure 13:** _Inter-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 13:** _Inter-state Land, Energy and Water Requirements, for the DAC+RWGS+FT pathway, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)-%20Intra-state.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/DAC%2BRWGS%20Maps/DAC%2BRWGS%20(TexasCali)%20-%20Intra-state.png" width="500"> 
 
-**Figure 14:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 14:** _Intra-state Land, Energy and Water Requirements, for the DAC+RWGS+FT pathway, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(Biological)%20-%20Texas.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/Bar%20Plots/Bars%20(DAC)%20-%20Texas.png" width="500"> 
 
-**Figure 15:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the nine feedstock-SAF conversion pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
+**Figure 15:** _Inter-state vs Intra-state Land, Feedstock, Energy and Water Requirements, for the two DAC pathways, specific to Texas. The sample bar plot corresponding to California can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
 
-To obtain California/Texas inter/intra-state map plots corresponding to other feedstock-SAF pathway combinations, the user must modify the index of the variable ```path``` (lines 234-237) within the ```BioPathways_script_V2``` script:
+To obtain California/Texas inter/intra-state map plots corresponding to other DAC pathways, the user must modify the index of the variable ```path``` (lines 99-100) within the ```DACPathways_script_V2``` script:
 
   ```
-  pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
-      'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
-      'Switchgrass FT';'Corn Oil HEFA'};
-  path = 1;
+  pathways = {'DAC+RWGS+FT','DAC+electrolysis+FT'};
+  path = 2;
   ```
 
-**Note:** It is possible to modify the variable ```selection``` (line 18) to admit indeces corresponding to other states. By default, the indeces 5 and 43 correspond to California and Texas, respectively. 
+**Note:** It is possible to modify the variable ```selection``` (line 16) to admit indeces corresponding to other states. By default, the indeces 5 and 43 correspond to California and Texas, respectively. 
 
 ([ back to top ](#back_to_top))
 
