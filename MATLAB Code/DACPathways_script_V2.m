@@ -97,7 +97,7 @@ end
 % Step 3: Plotting the results, 
 % For plotting, the user has to choose the desired conversion pathway.
 pathways = {'DAC+RWGS+FT','DAC+electrolysis+FT'};
-path = 2;
+path = 1; % DAC+RWGS+FT
 states{10,1} = 'Georgia.';
 
 centers = [35.9,-119.2; % CA (5)
@@ -152,7 +152,7 @@ for k = 1:50
         map = S1(in,path,5)/Max2;
         colors = [1 1 1]*(1-map);
         bordersm(states{k,1},'facecolor',colors)
-        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,5),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,5),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0 0.447 0.741],'Color',[0 0 0])
     end
     
 end
@@ -180,7 +180,7 @@ for k = 1:50
         map = S1(in,path,4)/Max3;
         colors = [1 1 1]*(1-map);
         bordersm(states{k,1},'facecolor',colors)
-        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,4),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,4),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.929 0.694 0.125],'Color',[0 0 0])
     end
     
 end
@@ -208,7 +208,7 @@ for k = 1:50
         map = S1(in,path,6)/Max4;
         colors = [1 1 1]*(1-map);
         bordersm(states{k,1},'facecolor',colors)
-        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.85 0.325 0.098],'Color',[0 0 0])
     end
     
 end
@@ -272,7 +272,7 @@ for k = 1:50
         map = S2(in,path,5)/Max2;
         colors = [1 1 1]*(1-map);
         bordersm(states{k,1},'facecolor',colors)
-        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,5),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,5),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0 0.447 0.741],'Color',[0 0 0])
     end
     
 end
@@ -300,7 +300,7 @@ for k = 1:50
         map = S2(in,path,4)/Max3;
         colors = [1 1 1]*(1-map);
         bordersm(states{k,1},'facecolor',colors)
-        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,4),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,4),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.929 0.694 0.125],'Color',[0 0 0])
     end
     
 end
@@ -328,7 +328,7 @@ for k = 1:50
         map = S2(in,path,6)/Max4;
         colors = [1 1 1]*(1-map);
         bordersm(states{k,1},'facecolor',colors)
-        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.85 0.325 0.098],'Color',[0 0 0])
     end
     
 end

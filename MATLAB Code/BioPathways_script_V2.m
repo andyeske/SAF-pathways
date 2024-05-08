@@ -190,7 +190,7 @@ end
 pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
     'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
     'Switchgrass FT';'Corn Oil HEFA'};
-path = 6;
+path = 1; % Corn Grain ATJ EtOH
 states{10,1} = 'Georgia.';
 
 centers = [35.9,-119.2; % CA (5)
@@ -245,7 +245,7 @@ for k = 1:50
         map = (S1(in,path,3)/10^9)/Max2;
         colors(k,:) = [1 1 1]*(1-map) + [0 0 0]*map;
         bordersm(states{k,1},'facecolor',colors(k,:))
-        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,3)/10^9,3,'significant'))],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,3)/10^9,3,'significant'))],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0 0.447 0.741],'Color',[0 0 0])
     end
     
 end
@@ -274,7 +274,7 @@ for k = 1:50
         map = S1(in,path,6)/Max3;
         colors(k,:) = [1 1 1]*(1-map) + [0 0 0]*map;
         bordersm(states{k,1},'facecolor',colors(k,:))
-        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.929 0.694 0.125],'Color',[0 0 0])
     end
     
 end
@@ -303,7 +303,7 @@ for k = 1:50
         map = S1(in,path,8)/Max4;
         colors(k,:) = [1 1 1]*(1-map) + [0 0 0]*map;
         bordersm(states{k,1},'facecolor',colors(k,:))
-        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,8),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S1(in,path,8),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.85 0.325 0.098],'Color',[0 0 0])
     end
     
 end
@@ -368,7 +368,7 @@ for k = 1:50
         map = (S2(in,path,3)/10^9)/Max2;
         colors(k,:) = [1 1 1]*(1-map) + [0 0 0]*map;
         bordersm(states{k,1},'facecolor',colors(k,:))
-        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,3)/10^9,3,'significant'))],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,3)/10^9,3,'significant'))],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0 0.447 0.741],'Color',[0 0 0])
     end
     
 end
@@ -397,7 +397,7 @@ for k = 1:50
         map = S2(in,path,6)/Max3;
         colors(k,:) = [1 1 1]*(1-map) + [0 0 0]*map;
         bordersm(states{k,1},'facecolor',colors(k,:))
-        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,6),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.929 0.694 0.125],'Color',[0 0 0])
     end
     
 end
@@ -426,7 +426,7 @@ for k = 1:50
         map = S2(in,path,8)/Max4;
         colors(k,:) = [1 1 1]*(1-map) + [0 0 0]*map;
         bordersm(states{k,1},'facecolor',colors(k,:))
-        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,8),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.466 0.674 0.188],'Color',[0 0 0])
+        textm(centers(in,1),centers(in,2),[num2str(round(S2(in,path,8),3,'significant')),'%'],'FontSize',10,'FontWeight','bold','HorizontalAlignment','center','BackgroundColor',[0.85 0.325 0.098],'Color',[0 0 0])
     end
     
 end
