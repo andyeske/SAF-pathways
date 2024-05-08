@@ -178,7 +178,7 @@ Running ```BioPathways_script_V2``` produces plots similar in nature to ```BioPa
 </p>
 
 <p align="left">
-<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)-%20Intra-state.png" width="500"> 
+<img src="https://github.com/andyeske/SAF-pathways/blob/main/Sample%20Plots/ATJ%20Maps/ATJ%20(TexasCali)%20-%20Intra-state.png" width="500"> 
 
 **Figure 7:** _Intra-state Land, Feedstock, Energy and Water Requirements, for the Corn Grain ATJ EtOH conversion process, specific for California and Texas. More sample plots can be found [here](https://github.com/andyeske/SAF-pathways/tree/main/Sample%20Plots)_.
 </p>
