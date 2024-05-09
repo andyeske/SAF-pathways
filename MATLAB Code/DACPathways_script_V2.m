@@ -94,7 +94,7 @@ for path = 1:2 % Iterating through the two pathways
 end
 
 % ----------------------------------------------------------------------- %
-% Step 3: Plotting the results, 
+% Step 4: Plotting the results, 
 % For plotting, the user has to choose the desired conversion pathway.
 pathways = {'DAC+RWGS+FT','DAC+electrolysis+FT'};
 path = 1; % DAC+RWGS+FT
@@ -396,7 +396,7 @@ title('Solar Requirements / California Installed Capacity')
 ylabel('Solar Capacity (%)')
 set(gca, 'FontSize', 12)
 
-% Map 4: Required Water / State Water Usage [S1(s,path,6)]
+% Bar 4: Required Water / State Water Usage [S1(s,path,6)]
 nexttile
 B4 = [sum(S1(1,1,6)),sum(S2(1,1,6));
       sum(S1(1,2,6)),sum(S2(1,2,6))];
@@ -462,7 +462,7 @@ title('Solar Requirements / Texas Installed Capacity')
 ylabel('Solar Capacity (%)')
 set(gca, 'FontSize', 12)
 
-% Map 4: Required Water / State Water Usage [S1(s,path,6)]
+% Bar 4: Required Water / State Water Usage [S1(s,path,6)]
 nexttile
 B4 = [sum(S1(2,1,6)),sum(S2(2,1,6));
       sum(S1(2,2,6)),sum(S2(2,2,6))];

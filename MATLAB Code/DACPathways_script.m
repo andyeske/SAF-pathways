@@ -117,7 +117,7 @@ CO2Efficiencies = CO2_SAF;
 WaterUtilization = w_SAF;
 
 % ----------------------------------------------------------------------- %
-% Step 3: Plotting the results, 
+% Step 4: Plotting the results, 
 % For plotting, the user has to choose the desired conversion pathway.
 pathways = {'DAC+RWGS+FT','DAC+electrolysis+FT'};
 path = 2;
@@ -597,7 +597,7 @@ title('Solar Requirements / Total U.S. Installed Capacity')
 ylabel('Solar Capacity (%)')
 set(gca, 'FontSize', 12)
 
-% Map 4: Required Water / State Water Usage [S1(s,path,2)]
+% Bar 4: Required Water / State Water Usage [S1(s,path,2)]
 nexttile
 B4 = [sum(S1(:,1,2)),sum(S2(:,1,2));
       sum(S1(:,2,2)),sum(S2(:,2,2))];
@@ -614,3 +614,22 @@ ylabel('Water Use (%)')
 set(gca, 'FontSize', 12)
 t4.TileSpacing = 'compact';
 t4.Padding = 'compact';
+
+% ----------------------------------------------------------------------- %
+% Step 5: Calculating efficiency metrics
+LHV_H2 = 120; % MJ/kg
+LHV_SAF = 131.45; % MJ/gal
+
+% Thermal Efficiency (eta_thermal): Qsaf*LHVsaf/(Qcrop*LHVcrop + Einput)
+eta_thermal = fuel_reqs_Data(1,1)*(10^6)*LHV_SAF./(fuel_reqs_Data(1,1)*(10^6)*LHV_H2.*[1.3 0.88] + S1(1,:,1)); % MJ/MJ
+
+% Fuel Utilization (Fu): Qsaf*LHVsaf/(Qcrop*LHVcrop) 
+Fu = 1./(LHV_H2*[1.3 0.88]./LHV_SAF); % MJ/MJ
+
+%MJ H2/gal SAF
+
+% Water Utilization (Wu): Qsaf/Wtotal
+Wu = 1./w_SAF; % gal SAF/gal H2O
+
+% CO2 Utilization (CO2u): Qsaf/(Qcrop*CO2crop)
+CO2u = 1./CO2_SAF; % gal SAF/kg CO2

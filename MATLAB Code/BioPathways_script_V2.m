@@ -67,10 +67,10 @@ yield_ATJ_EtOH = Crop_Conversion_Specs{26,3}; % gal SAF/gal EtOH
 ATJ_EtOH_E = Crop_Conversion_Specs{27,3}; % MJ/gal SAF
 yield_ATJ_BuOH = Crop_Conversion_Specs{28,3}; % gal SAF/gal BuOH
 ATJ_BuOH_E = Crop_Conversion_Specs{29,3}; % MJ/gal SAF
-yield_FT = Crop_Conversion_Specs{30,3}; % gal SAF/kg crop
-FT_E = Crop_Conversion_Specs{31,3}; % MJ/gal SAF
-yield_HEFA = Crop_Conversion_Specs{32,3}; % gal SAF/gal CO
-HEFA_E = Crop_Conversion_Specs{33,3}; % MJ/gal SAF
+yield_HEFA = Crop_Conversion_Specs{30,3}; % gal SAF/gal CO
+HEFA_E = Crop_Conversion_Specs{31,3}; % MJ/gal SAF
+yield_FT = Crop_Conversion_Specs{32,3}; % gal SAF/gal CO
+FT_E = Crop_Conversion_Specs{33,3}; % MJ/gal SAF
 % Function Inputs (f):
 SAF_Yield = [yield_ATJ_EtOH,yield_ATJ_BuOH,yield_FT,yield_HEFA];
 SAF_E = [ATJ_EtOH_E,ATJ_BuOH_E,FT_E,HEFA_E];
@@ -185,12 +185,12 @@ for q = 1:2 % Iterating through every state
 end
 
 % ----------------------------------------------------------------------- %
-% Step 3: Plotting the results, 
+% Step 4: Plotting the results, 
 % For plotting, the user has to choose the desired conversion pathway.
 pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
     'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
     'Switchgrass FT';'Corn Oil HEFA'};
-path = 1; % Corn Grain ATJ EtOH
+path = 6; % Corn Grain ATJ EtOH
 states{10,1} = 'Georgia.';
 
 centers = [35.9,-119.2; % CA (5)
@@ -411,7 +411,7 @@ axesm ('behrmann', 'Frame', 'on', 'Grid', 'on');
 mlabel off
 plabel off
 
-% Map 4: Required Water / State Water Usage [S2(s,path,8)]
+% Bar 4: Required Water / State Water Usage [S2(s,path,8)]
 nexttile
 Max4 = max(S2(:,path,8));
 colors = zeros(50,3);
@@ -466,7 +466,7 @@ yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Harvested Area Requirements / California Field Crop Land')
 ylabel('Harvested Area (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
 % Bar 2: Total Feedstock 
@@ -481,7 +481,7 @@ b2(2).FaceAlpha = 0.5;
 legend('Inter-State Flights','Intra-State Flights')
 title('Total Feedstock Requirements')
 ylabel('Feedstock (Mt)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
 % Bar 3: Solar Required / State Installed Capacity
@@ -501,7 +501,7 @@ yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Solar Requirements / California Installed Capacity')
 ylabel('Solar Capacity (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
 % Map 4: Required Water / State Water Usage [S2(s,path,8)]
@@ -515,13 +515,10 @@ b4 = bar(cat,B4,'FaceColor','flat');
 b4(1).CData = [0.85 0.325 0.098];
 b4(2).CData = [0.85 0.325 0.098];
 b4(2).FaceAlpha = 0.5;
-hold on
-yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
-yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Water Requirements / California Water Usage')
 ylabel('Water Use (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 t4.TileSpacing = 'compact';
 t4.Padding = 'compact';
@@ -547,7 +544,7 @@ yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Harvested Area Requirements / Texas Field Crop Land')
 ylabel('Harvested Area (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
 % Bar 2: Total Feedstock 
@@ -562,7 +559,7 @@ b2(2).FaceAlpha = 0.5;
 legend('Inter-State Flights','Intra-State Flights')
 title('Total Feedstock Requirements')
 ylabel('Feedstock (Mt)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
 % Bar 3: Solar Required / State Installed Capacity
@@ -582,10 +579,10 @@ yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Solar Requirements / Texas Installed Capacity')
 ylabel('Solar Capacity (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
-% Map 4: Required Water / State Water Usage [S2(s,path,8)]
+% Bar 4: Required Water / State Water Usage [S2(s,path,8)]
 nexttile
 B4 = [S1(2,1,7),S1(2,2,7),S1(2,3,7),S1(2,4,7),S1(2,5,7),S1(2,6,7),S1(2,7,7),S1(2,8,7),S1(2,9,7);
       S2(2,1,7),S2(2,2,7),S2(2,3,7),S2(2,4,7),S2(2,5,7),S2(2,6,7),S2(2,7,7),S2(2,8,7),S2(2,9,7)];
@@ -597,13 +594,10 @@ xlim=get(gca,'xlim');
 b4(1).CData = [0.85 0.325 0.098];
 b4(2).CData = [0.85 0.325 0.098];
 b4(2).FaceAlpha = 0.5;
-hold on
-yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
-yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Water Requirements / Texas Water Usage')
 ylabel('Water Use (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 t4.TileSpacing = 'compact';
 t4.Padding = 'compact';

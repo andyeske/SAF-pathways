@@ -64,10 +64,10 @@ yield_ATJ_EtOH = Crop_Conversion_Specs{26,3}; % gal SAF/gal EtOH
 ATJ_EtOH_E = Crop_Conversion_Specs{27,3}; % MJ/gal SAF
 yield_ATJ_BuOH = Crop_Conversion_Specs{28,3}; % gal SAF/gal BuOH
 ATJ_BuOH_E = Crop_Conversion_Specs{29,3}; % MJ/gal SAF
-yield_FT = Crop_Conversion_Specs{30,3}; % gal SAF/kg crop
-FT_E = Crop_Conversion_Specs{31,3}; % MJ/gal SAF
-yield_HEFA = Crop_Conversion_Specs{32,3}; % gal SAF/gal CO
-HEFA_E = Crop_Conversion_Specs{33,3}; % MJ/gal SAF
+yield_HEFA = Crop_Conversion_Specs{30,3}; % gal SAF/gal CO
+HEFA_E = Crop_Conversion_Specs{31,3}; % MJ/gal SAF
+yield_FT = Crop_Conversion_Specs{32,3}; % gal SAF/gal CO
+FT_E = Crop_Conversion_Specs{33,3}; % MJ/gal SAF
 % Function Inputs (f):
 SAF_Yield = [yield_ATJ_EtOH,yield_ATJ_BuOH,yield_FT,yield_HEFA];
 SAF_E = [ATJ_EtOH_E,ATJ_BuOH_E,FT_E,HEFA_E];
@@ -219,7 +219,7 @@ for s = 1:50 % Iterating through every state
 end
 
 % ----------------------------------------------------------------------- %
-% Step 3: Plotting the results, 
+% Step 4: Plotting the results, 
 % For plotting, the user has to choose the desired conversion pathway.
 pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
     'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
@@ -528,7 +528,7 @@ airlines = {'Spirit','Republic','Delta','United','Jetblue'...
             'Endeavor','Southwest','Sun Country','Alaska','Hawaiian',...
             'SkyWest','Piedmont','Envoy','PSA','Horizon',...
             'American','Allegiant','Frontier','Mesa'};
-air = 16; % American
+air = 7; % American
 figure
 t3 = tiledlayout(2,2);
 title(t3,[char(pathways(path)),' - Inter-State Flights - ',char(airlines(air))])
@@ -671,7 +671,7 @@ yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Harvested Area Requirements / Total U.S. Field Crop Land')
 ylabel('Harvested Area (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
 % Bar 2: Total Feedstock 
@@ -679,14 +679,14 @@ nexttile
 B2 = [sum(S1(:,1,3)),sum(S1(:,2,3)),sum(S1(:,3,3)),sum(S1(:,4,3)),sum(S1(:,5,3)),sum(S1(:,6,3)),sum(S1(:,7,3)),sum(S1(:,8,3)),sum(S1(:,9,3));
       sum(S2(:,1,3)),sum(S2(:,2,3)),sum(S2(:,3,3)),sum(S2(:,4,3)),sum(S2(:,5,3)),sum(S2(:,6,3)),sum(S2(:,7,3)),sum(S2(:,8,3)),sum(S2(:,9,3))];
 cat = categorical(pathways);
-b2 = bar(cat,B2,'FaceColor','flat');
+b2 = bar(cat,B2/10^9,'FaceColor','flat');
 b2(1).CData = [0 0.447 0.741];
 b2(2).CData = [0 0.447 0.741];
 b2(2).FaceAlpha = 0.5;
 legend('Inter-State Flights','Intra-State Flights')
 title('Total Feedstock Requirements')
 ylabel('Feedstock (Mt)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
 % Bar 3: Solar Required / State Installed Capacity
@@ -706,10 +706,10 @@ yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Solar Requirements / Total U.S. Installed Capacity')
 ylabel('Solar Capacity (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 
-% Map 4: Required Water / State Water Usage [S2(s,path,8)]
+% Bar 4: Required Water / State Water Usage [S2(s,path,8)]
 nexttile
 B4 = [sum(S1(:,1,7)),sum(S1(:,2,7)),sum(S1(:,3,7)),sum(S1(:,4,7)),sum(S1(:,5,7)),sum(S1(:,6,7)),sum(S1(:,7,7)),sum(S1(:,8,7)),sum(S1(:,9,7));
       sum(S2(:,1,7)),sum(S2(:,2,7)),sum(S2(:,3,7)),sum(S2(:,4,7)),sum(S2(:,5,7)),sum(S2(:,6,7)),sum(S2(:,7,7)),sum(S2(:,8,7)),sum(S2(:,9,7))];
@@ -720,13 +720,37 @@ b4 = bar(cat,B4,'FaceColor','flat');
 b4(1).CData = [0.85 0.325 0.098];
 b4(2).CData = [0.85 0.325 0.098];
 b4(2).FaceAlpha = 0.5;
-hold on
-yl = yline(100,'k--','100%','LineWidth',1,'FontSize',12);
-yl.LabelHorizontalAlignment = 'center';
 legend('Inter-State Flights','Intra-State Flights')
 title('Water Requirements / Total U.S. Water Usage')
 ylabel('Water Use (%)')
-set(gca, 'YScale', 'log')
+%set(gca, 'YScale', 'log')
 set(gca, 'FontSize', 12)
 t4.TileSpacing = 'compact';
 t4.Padding = 'compact';
+
+% ----------------------------------------------------------------------- %
+% Step 5: Calculating efficiency metrics
+LHV_SAF = 131.45; % MJ/gal
+LHV_Corn = 13.04; % MJ/kg
+LHV_Stover = 13.3; % MJ/kg
+LHV_Misc = 15.66; % MJ/kg
+LHV_Switch = 15.57; % MJ/kg
+LHV_CornOil = 37.7; % MJ/kg
+
+% pathways = {'Corn Grain ATJ EtOH';'Corn Grain ATJ BuOH';'Corn Stover ATJ EtOH';...
+%     'Miscanthus ATJ EtOH';'Switchgrass ATJ EtOH';'Corn Stover FT';'Miscanthus FT';...
+%     'Switchgrass FT';'Corn Oil HEFA'};
+feeds = [LHV_Corn LHV_Corn LHV_Stover LHV_Misc LHV_Switch LHV_Stover LHV_Misc LHV_Switch LHV_CornOil];
+CO2_feeds = [CO2_Corn CO2_Corn CO2_Corn CO2_Misc CO2_Switch CO2_Corn CO2_Misc CO2_Switch CO2_Corn/yield_CO];
+
+% Thermal Efficiency (eta_thermal): Qsaf*LHVsaf/(Qcrop*LHVcrop + Einput)
+eta_thermal = fuel_reqs_Data(1,1)*(10^6)*LHV_SAF./(S1(1,:,3).*feeds + S1(1,:,4)); % MJ/MJ
+
+% Fuel Utilization (Fu): Qsaf*LHVsaf/(Qcrop*LHVcrop) 
+Fu = fuel_reqs_Data(1,1)*(10^6)*LHV_SAF./(S1(1,:,3).*feeds); % MJ/MJ
+
+% Water Utilization (Wu): Qsaf/Wtotal
+Wu = fuel_reqs_Data(1,1)*(10^6)./S1(s,:,7); % gal SAF/gal H2O
+
+% CO2 Utilization (CO2u): Qsaf/(Qcrop*CO2crop)
+CO2u = fuel_reqs_Data(1,1)*(10^6)./(S1(1,:,3).*CO2_feeds); % gal SAF/kg CO2

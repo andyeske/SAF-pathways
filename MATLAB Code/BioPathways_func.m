@@ -56,7 +56,7 @@ process_BuOH_H2O = process_H2O(2);
 process_CO_H2O = process_H2O(3);
 
 % SAF Conversion Pathways Data: 
-% SAF Yield: [yield_ATJ_EtOH, yield_ATJ_BuOH, yield_FT, yield_HEFA]
+% SAF Yield: [yield_ATJ_EtOH, yield_ATJ_BuOH,yield_FT,yield_HEFA]
 % (MJ/gal SAF)
 % SAF Energy: [ATJ_EtOH_E, ATJ_BuOH_E, FT_E, HEFA_E]
 % (MJ/gal SAF)
