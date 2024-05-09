@@ -23,9 +23,10 @@ w_SAF = [11.6 7.86]./3.785; % gal H2O/gal SAF
 DAC_E = [0.048 0.048]; % MJ/gal SAF
 H2_E = [191 191]; % MJ/kg H2
 yield_SAF = [1.3 0.88]; %kg H2/gal SAF
-FT_E = [171.2 180.8].*3.785; % MJ/gal SAF
+FT_E = [180.8 171.2].*3.785; % MJ/gal SAF
 Thermo_E = FT_E - (DAC_E + H2_E.*yield_SAF); % MJ/gal SAF
 CO2_SAF = [9.2 9.2]; % kg CO2/gal SAF
+CO_SAF = CO2_SAF*(28/44); % kg CO2/gal SAF
 DAC_Area = [0.0018 0.0018]*10^-4; % ha/gal SAF/year
 SAF_energy = 131.45; % MJ/gal
 H2_energy = 120; % MJ/kg;
@@ -619,14 +620,13 @@ t4.Padding = 'compact';
 % Step 5: Calculating efficiency metrics
 LHV_H2 = 120; % MJ/kg
 LHV_SAF = 131.45; % MJ/gal
+LHV_CO = 10.2;
 
 % Thermal Efficiency (eta_thermal): Qsaf*LHVsaf/(Qcrop*LHVcrop + Einput)
-eta_thermal = fuel_reqs_Data(1,1)*(10^6)*LHV_SAF./(fuel_reqs_Data(1,1)*(10^6)*LHV_H2.*[1.3 0.88] + S1(1,:,1)); % MJ/MJ
+eta_thermal = fuel_reqs_Data(1,1)*(10^6)*LHV_SAF./S1(1,:,1); % MJ/MJ
 
 % Fuel Utilization (Fu): Qsaf*LHVsaf/(Qcrop*LHVcrop) 
-Fu = 1./(LHV_H2*[1.3 0.88]./LHV_SAF); % MJ/MJ
-
-%MJ H2/gal SAF
+Fu = 1./((LHV_H2*[1.3 0.88] + LHV_CO.*CO_SAF)./LHV_SAF); % MJ/MJ
 
 % Water Utilization (Wu): Qsaf/Wtotal
 Wu = 1./w_SAF; % gal SAF/gal H2O
