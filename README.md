@@ -1,5 +1,5 @@
 <a name="back_to_top"></a>
-# Pathways Towards Future Aviation Energy Carriers, CO<sub>2</sub> Capture and Reduction, Energy Carrier Production and Scale-Up
+# Pathways Towards Sustainable Aviation Fuel Production and Scale-Up: The Case of California and Texas
 
 In this repository, we provide an overview of the MATLAB script and function utilized to:
 1) Compute the process energy, water, and harvested land energy requirements for each choice of feedstock and pathway.
